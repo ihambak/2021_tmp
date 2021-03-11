@@ -1,0 +1,2 @@
+https://support.google.com/analytics/answer/3191589?hl=ko
+https://developers.google.com/analytics/devguides/config/mgmt/v3/data-import

@@ -1,0 +1,27 @@
+# ResponseBody + hashmap json 리턴
+
+@ResponseBody
+@RequestMapping(value = "/ajaxTest.do")
+public HashMap<String, String> ajaxTest() throws Exception {
+
+  HashMap<String, String> map = new HashMap<String, String>();
+  map.put("id", "testId");
+
+  return map;
+}
+
+
+
+# hashmap json 리턴
+
+@RequestMapping(value = "/ajaxTest.do")
+public void ajaxTest(HttpServletResponse response) throws Exception {
+
+  HashMap<String, String> map = new HashMap<String, String>();
+  map.put("id", "아이디");
+
+  response.setContentType("application/json");
+  response.setCharacterEncoding("UTF-8");
+  //new ObjectMapper().writeValueAsString(map) -> map데이터를 JSON형태의 데이터로 파싱
+  response.getWriter().write(new ObjectMapper().writeValueAsString(map));
+}
